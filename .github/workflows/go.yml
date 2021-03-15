@@ -19,7 +19,11 @@ jobs:
         go-version: 1.15
 
     - name: Build
-      run: go build -v ./...
-
-    - name: Test
-      run: go test -v ./...
+      run: go build -o perf-test -v ./../
+      
+    - name: Publish
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "perf-test"
+        bodyFile: "body.md"
+        token: ${{ secrets.GITHUB_TOKEN }}
