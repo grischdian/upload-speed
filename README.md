@@ -1,5 +1,4 @@
 # Just check your Network speed over http
-HTTPS still missing
 
 # Run check
 ## On Serverside
