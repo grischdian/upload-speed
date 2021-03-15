@@ -8,5 +8,5 @@ go run main.go
 ```
 ## On Clientside
 ```
- curl -X PUT -F "myFile=@$testfile" $servername:8080/upload
+ curl -X PUT -k -F "myFile=@$testfile" https://$servername/upload
 ```

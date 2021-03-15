@@ -106,10 +106,11 @@ func Round(val float64, roundOn float64, places int ) (newVal float64) {
 func setupRoutes() {
     fmt.Println("Server started")
     fmt.Println("Uploading Files:")
-    fmt.Println("curl -X PUT -F \"myFile=@$FILENAME\" $SERVER:8080/upload")
+    fmt.Println("curl -X PUT -k -F \"myFile=@$FILENAME\" https://$SERVER/upload")
     fmt.Println("")
     http.HandleFunc("/upload", uploadFile)
-    http.ListenAndServe(":8080", nil)
+    //http.ListenAndServe(":8080", nil) //http only
+    http.ListenAndServeTLS(":443", "cert/cert.crt", "cert/cert.key", nil)
 }
 
 func main() {
@@ -120,4 +121,5 @@ func main() {
     suffixes[4] = "TByte"
     setupRoutes()
 }
+
 
