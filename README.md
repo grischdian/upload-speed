@@ -1,4 +1,5 @@
 # Just check your Network speed over http
+## Be aware: This program comes with ABSOLUTELY NO WARRANTY.
 
 # Run check
 ## On Serverside
